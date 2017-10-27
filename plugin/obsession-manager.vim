@@ -7,7 +7,7 @@ if !exists('g:obsession_manager_dir')
     let g:obsession_manager_dir = expand('~/.vim/sessions/')
 endif
 
-command! -bang -bar -nargs=? -complete=customlist,s:obsession_complete ObsessionManager execute s:obsession_manager(<bang>0, <q-args>)
+command! -bang -bar -nargs=? -complete=customlist,s:obsession_complete ObsessionManager call s:obsession_manager(<bang>0, <q-args>)
 
 function! s:obsession_manager(bang, file) abort
     if a:bang
